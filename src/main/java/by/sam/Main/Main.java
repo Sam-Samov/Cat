@@ -1,7 +1,7 @@
 package by.sam.Main;
 
 import by.sam.Main.entity.Kitty;
-import by.sam.Main.utils.Actions;
+import by.sam.Main.utils.AnimalUtils;
 
 /*Создать объект класса «Котёнок», используя классы «Животное», «Кошка».
     Методы: 1)выводит на консоль имя
@@ -12,13 +12,14 @@ import by.sam.Main.utils.Actions;
     6)пытаться чепушить шторку*/
 public class Main {
     public static void main(String[] args) {
-        Actions actions = new Actions();
-        Kitty kitty1 = new Kitty();
-        kitty1.setName("Персик");
-        kitty1.setBreed("Пробник тигра");
-        kitty1.setWeight(6.3);
-        kitty1.setCoatLength("Среднешёрстный");
-        kitty1.setColor("Рыжий");
-        actions.voice(kitty1);
+        AnimalUtils animalUtils = new AnimalUtils();
+        Kitty kitty1 = new Kitty("Персик", 6.3, "Пробник тигра", "Мяу!", "Рыжий",
+                "Среднешёрстный");
+        animalUtils.printKitty(kitty1);
+        animalUtils.voice(kitty1);
+        animalUtils.run(kitty1);
+        animalUtils.jump(kitty1);
+        animalUtils.bite(kitty1);
+        animalUtils.biteCurtains(kitty1);
     }
 }
